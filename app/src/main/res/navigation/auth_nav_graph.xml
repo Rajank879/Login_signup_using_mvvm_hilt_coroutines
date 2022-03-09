@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav_graph"
+    app:startDestination="@id/launcherFragment">
+
+    <fragment
+        android:id="@+id/launcherFragment"
+        android:name="com.appilab.loginsignupmvvm.presentation.ui.auth.LauncherFragment"
+        android:label="fragment_launcher"
+        tools:layout="@layout/fragment_launcher" >
+        <action android:id="@+id/action_launcherfragment_to_login_fragment"
+            app:destination="@+id/loginFragment"/>
+
+        <action android:id="@+id/action_launcherfragment_to_registerfragment"
+            app:destination="@id/registerFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.appilab.loginsignupmvvm.presentation.ui.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action android:id="@+id/action_loginfragment_to_launcherfragment"
+            app:destination="@id/launcherFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.appilab.loginsignupmvvm.presentation.ui.auth.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action android:id="@+id/action_registerfragment_to_launcherfragment"
+            app:destination="@id/launcherFragment"/>
+    </fragment>
+</navigation>
